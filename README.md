@@ -1,3 +1,4 @@
+[![CI - build & security](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci.yml)
 # CI Secure Demo
 
 **TL;DR:** Node app + Docker with GitHub Actions pipeline that runs `npm audit` and Trivy scan.
