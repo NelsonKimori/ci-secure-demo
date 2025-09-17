@@ -8,7 +8,7 @@
 ## Screenshot
 
 ![CI workflow run](images/ci-run.png)
-
+![Trivy scan output](images/trivy-scan.png)
 ---
 
 ## Summary
