@@ -1,4 +1,5 @@
-[![CI - build & security](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci.yml)
+[![CI - build & security](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci-security.yml/badge.svg)](https://github.com/NelsonKimori/ci-secure-demo/actions/workflows/ci-security.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # CI / Secure Demo
 
 > **Mini case study:** a small demo app + CI pipeline focused on integrating automated security checks (npm audit + Trivy) so vulnerable packages and container images are caught during CI.
