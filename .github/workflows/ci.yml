@@ -1,0 +1,29 @@
+name: CI - build & security
+on: [push, pull_request]
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run npm audit (fail on high+)
+        run: |
+          npm audit --audit-level=high || (echo "::error::Vulnerabilities found" && exit 1)
+
+      - name: Build Docker image
+        run: docker build -t demo-app:latest .
+
+      - name: Trivy filesystem scan (scans project files & deps)
+        run: docker run --rm -v "${{ github.workspace }}:/project" aquasec/trivy:latest fs /project --exit-code 1 --severity CRITICAL
